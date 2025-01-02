@@ -1,0 +1,57 @@
+﻿using Entities;
+using System.ComponentModel;
+
+namespace Repository
+{
+    public class GiftsReposetory : IGiftsReposetory
+    {
+        static int Identity = 1;
+        static List<Gift> gifts = [new Gift() { Id = Identity++, Name = "Tabel", Description = "big & nice", imgUrl = "1.gif", donorId = 0 }
+        ,new Gift() { Id = Identity++, Name = "Tabel", Description = "big & nice", imgUrl = "1.gif", donorId = 0 }];
+        public async Task<List<Gift>> getGifts()
+        {
+            return gifts; ;
+
+
+
+        }
+        public async Task<Gift> getById(int id)
+        {
+
+            return gifts.FirstOrDefault<Gift>(currenGift => currenGift.Id == id);
+
+
+        }
+        public async Task<Gift> createGift(Gift gift)
+        {
+            gift.Id = Identity++;
+            gifts.Add(gift);
+            return (gift);
+        }
+
+        public async Task<Gift> updateGift(int id, Gift giftToUpdate)
+        {
+            Gift? gift = gifts.Find(currenGift => currenGift.Id == id);
+            
+            if (gift == null)
+            {
+                return null;
+            }
+            gift.Price = giftToUpdate.Price;
+            gift.Description = giftToUpdate.Description;
+            gift.donorId = giftToUpdate.donorId;
+            gift.Name= giftToUpdate.Name;
+            gift.imgUrl = giftToUpdate.imgUrl;
+            return (gift);
+
+        }
+        public async Task deleteGift(int id)
+        {
+
+            gifts.RemoveAll(currenGift => currenGift.Id == id);
+
+
+        }
+
+    }
+}

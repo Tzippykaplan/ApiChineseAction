@@ -1,0 +1,6 @@
+@ApiChineseAction_HostAddress = http://localhost:5037
+
+GET {{ApiChineseAction_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
