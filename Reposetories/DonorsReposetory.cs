@@ -1,4 +1,5 @@
 ﻿using Entities;
+using Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,7 +51,7 @@ namespace Reposetories
         }
         public async Task deleteDonor(int id)
         {
-
+            if(GiftsReposetory.gifts.FirstOrDefault<Gift>(gift=>gift.donorId==id)!=null)
             donors.RemoveAll(currenDonor => currenDonor.Id == id);
 
 

@@ -6,8 +6,11 @@ namespace Repository
     public class GiftsReposetory : IGiftsReposetory
     {
         static int Identity = 1;
-        static List<Gift> gifts = [new Gift() { Id = Identity++, Name = "Tabel", Description = "big & nice", imgUrl = "1.gif", donorId = 0 }
-        ,new Gift() { Id = Identity++, Name = "Tabel", Description = "big & nice", imgUrl = "1.gif", donorId = 0 }];
+        public static List<Gift> gifts = [new Gift() { Id = Identity++, Name = "Tabel", Description = "big & nice", imgUrl = "tabel.png", donorId = 0 }
+        ,new Gift() { Id = Identity++, Name = "car", Description = "big & nice", imgUrl = "car.png", donorId = 0 },
+            new Gift() { Id = Identity++, Name = "bbb", Description = "big & nice", imgUrl = "car.png", donorId = 0 },
+            new Gift() { Id = Identity++, Name = "dd", Description = "big & nice", imgUrl = "car.png", donorId = 0 },
+        ];
         public async Task<List<Gift>> getGifts()
         {
             return gifts; ;

@@ -10,7 +10,7 @@ namespace Reposetories
     public class UserReposetory : IUserReposetory
     {
         static int Identity = 1;
-        static List<User> users = [new User() { Id = Identity++, FirstName = "ari", LastName = "chon", Email="aari@gmail.com", Password="1234",Phone="0548552214"},
+       public static List<User> users = [new User() { Id = Identity++, FirstName = "ari", LastName = "chon", Email="aari@gmail.com", Password="1234",Phone="0548552214"},
             new User() { Id = Identity++, FirstName = "mmm", LastName = "gg", Email = "gg@gmail.com",Password="7847",Phone="0504107477" }];
         public async Task<List<User>> getUsers()
         {
@@ -47,6 +47,12 @@ namespace Reposetories
             return (user);
 
         }
+        public async Task<User> login(string email, string password)
+        {
+             User? user = users.Find(currenUser => currenUser.Email == email && currenUser.Password==password);
+            return (user);
+        }
+
         public async Task deleteUser(int id)
         {
 

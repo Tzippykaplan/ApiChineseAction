@@ -36,6 +36,11 @@ namespace Services
             return await _usersReposetory.updateUser(id, userToUpdate);
 
         }
+        public async Task<User> login(string email, string password)
+        {
+            return await _usersReposetory.login(email, password);
+
+        }
         public async Task deleteUser(int id)
         {
 

@@ -11,6 +11,8 @@ builder.Services.AddScoped<IDonorsReposetory,DonorsReposetory>();
 builder.Services.AddScoped<IDonorsService, DonorsService>();
 builder.Services.AddScoped<IUserReposetory, UserReposetory>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IRaffleReposetory, RaffleReposetory>();
+builder.Services.AddScoped<IRaffleService, RaffleService>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

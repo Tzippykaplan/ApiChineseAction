@@ -49,7 +49,20 @@ namespace ApiChineseAction.Controllers
         }
 
 
+        [HttpPost("login")]
+        public async Task<ActionResult<User>> Login([FromQuery] string email, [FromQuery] string password)
+        {
+            try
+            {
+                User userLogin = await _userService.login(email, password);
+                return userLogin==null?Unauthorized(): Ok(userLogin);
+            }
+            catch (Exception e)
+            {
+                return BadRequest();
+            }
 
+        }
 
         // PUT api/<<UsersController>/5
         [HttpPut("{id}")]
