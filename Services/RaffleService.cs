@@ -15,9 +15,9 @@ namespace Services
         {
             _raffleReposetory = raffleReposetory;
         }
-        public async Task<LotteryTicket> createTicket(LotteryTicket lotteryTicket)
+        public async Task<List<LotteryTicket>> createTicket(List<LotteryTicket> lotteryTickets)
         {
-            return await _raffleReposetory.createTicket(lotteryTicket);
+            return await _raffleReposetory.createTicket(lotteryTickets);
         }
         public async Task<List<RaffleResponse>> GetRaffleResponse()
         {

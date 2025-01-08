@@ -12,11 +12,15 @@ namespace Reposetories
     {
         static int Identity = 1;
         static List<LotteryTicket> raffleTickets = [];
-        public async Task<LotteryTicket> createTicket(LotteryTicket lotteryTicket)
+        public async Task<List<LotteryTicket>> createTicket(List<LotteryTicket> lotteryTickets)
         {
-            lotteryTicket.Id = Identity++;
-            raffleTickets.Add(lotteryTicket);
-            return lotteryTicket;
+            lotteryTickets.ForEach(lotteryTicket =>
+            {
+                lotteryTicket.Id = Identity++;
+                raffleTickets.Add(lotteryTicket);
+               
+            });
+            return lotteryTickets;
         }
         public async Task<LotteryTicket> getTicketById(int id)
         {
@@ -31,9 +35,9 @@ namespace Reposetories
             gifts.ForEach(curretGift =>
             {
                 List<LotteryTicket> currentTickets = raffleTickets.FindAll(
-                gift => gift.Id == curretGift.Id);
+                currentTicket => currentTicket.GiftId == curretGift.Id);
                 LotteryTicket raffleWinner = currentTickets[random.Next(currentTickets.Count)];
-                User user = users.FirstOrDefault(user => user.Id == raffleWinner.Id);
+                User user = users.FirstOrDefault(user => user.Id == raffleWinner.UserId);
                 winersTickets.Add(new RaffleResponse() { User = user, Gift = curretGift });
             });
             return winersTickets;

@@ -39,12 +39,12 @@ namespace ApiChineseAction.Controllers
 
         // POST api/<RaffleController>
         [HttpPost]
-        public async Task<ActionResult<LotteryTicket>>Post([FromBody] LotteryTicket lotteryTicket)
+        public async Task<ActionResult<List<LotteryTicket>>>Post([FromBody] List<LotteryTicket> lotteryTickets)
         {
             try
             {
-                LotteryTicket newLotteryTicket = await _raffleService.createTicket(lotteryTicket);
-                return CreatedAtAction(nameof(Get), new { id = newLotteryTicket.Id }, newLotteryTicket);
+                List<LotteryTicket> newLotteryTickets = await _raffleService.createTicket(lotteryTickets);
+                return Created(nameof(Get), newLotteryTickets);
             }
             catch (Exception e)
             {
