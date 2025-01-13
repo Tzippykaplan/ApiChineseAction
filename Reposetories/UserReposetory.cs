@@ -10,8 +10,9 @@ namespace Reposetories
     public class UserReposetory : IUserReposetory
     {
         static int Identity = 1;
-       public static List<User> users = [new User() { Id = Identity++, FirstName = "ari", LastName = "chon", Email="aari@gmail.com", Password="1234",Phone="0548552214"},
-            new User() { Id = Identity++, FirstName = "mmm", LastName = "gg", Email = "gg@gmail.com",Password="7847",Phone="0504107477" }];
+       public static List<User> users = [new User() { Id = Identity++, FirstName = "ari", LastName = "chon", Email="a@gmail.com", Password="1",Phone="0548552214"},
+            new User() { Id = Identity++, FirstName = "mmm", LastName = "gg", Email = "b@gmail.com",Password="2",Phone="0504107477" }, 
+           new User() { Id = Identity++, FirstName = "mmm", LastName = "gg", Email = "c@gmail.com",Password="3",Phone="0504107477" }];
         public async Task<List<User>> getUsers()
         {
             return users; ;
