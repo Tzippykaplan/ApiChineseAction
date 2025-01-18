@@ -49,10 +49,15 @@ namespace Reposetories
             return (donor);
 
         }
-        public async Task deleteDonor(int id)
+        public async Task<Boolean> deleteDonor(int id)
         {
-            if(GiftsReposetory.gifts.FirstOrDefault<Gift>(gift=>gift.donorId==id)!=null)
-            donors.RemoveAll(currenDonor => currenDonor.Id == id);
+          
+            if (GiftsReposetory.gifts.FirstOrDefault<Gift>(gift => gift.donorId == id) == null) { 
+                donors.RemoveAll(currenDonor =>currenDonor.Id == id);
+            return true;
+            }
+            else
+                return false;
 
 
         }

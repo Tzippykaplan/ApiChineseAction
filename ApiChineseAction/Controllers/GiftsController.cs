@@ -63,6 +63,11 @@ namespace ApiChineseAction.Controllers
         {
             _giftService.deleteGift(id);
         }
+        [HttpPost("isUnique")]
+         public async Task<bool> isUnique(Gift gift)
+        {
+            return await _giftService.isUnique(gift);
+        }
 
     }
 }

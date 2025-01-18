@@ -32,10 +32,10 @@ namespace Services
             return await _donorsReposetory.updateDonor(id, donorToUpdate);
 
         }
-        public async Task deleteDonor(int id)
+        public async Task<Boolean> deleteDonor(int id)
         {
 
-            _donorsReposetory.deleteDonor(id);
+           return await _donorsReposetory.deleteDonor(id);
 
 
         }

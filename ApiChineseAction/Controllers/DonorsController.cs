@@ -63,9 +63,9 @@ namespace ApiChineseAction.Controllers
 
         // DELETE api/<<DonorsController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            _donorService.deleteDonor(id);
+            return await  _donorService.deleteDonor(id)? Ok(): BadRequest();
         }
     }
 }

@@ -55,6 +55,12 @@ namespace Repository
 
 
         }
+        public async Task<Boolean> isUnique(Gift gift)
+        {
+            Gift? foundGift = gifts.FirstOrDefault(currentGift => currentGift.Id != gift.Id && currentGift.Name == gift.Name);
+            return foundGift!=null ? false : true;
+
+        }
 
     }
 }

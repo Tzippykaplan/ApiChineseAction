@@ -9,5 +9,6 @@ namespace Repository
         Task<Gift> getById(int id);
         Task<List<Gift>> getGifts();
         Task<Gift> updateGift(int id, Gift giftToUpdate);
+        Task<Boolean> isUnique(Gift gift);
     }
 }

@@ -43,6 +43,13 @@ namespace Services
 
 
         }
+        public async Task<Boolean> isUnique(Gift gift)
+        {
+
+           return await  _giftsReposetory.isUnique(gift);
+
+
+        }
 
     }
 }
