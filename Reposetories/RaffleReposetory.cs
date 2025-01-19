@@ -36,9 +36,14 @@ namespace Reposetories
             {
                 List<LotteryTicket> currentTickets = raffleTickets.FindAll(
                 currentTicket => currentTicket.GiftId == curretGift.Id);
-                LotteryTicket raffleWinner = currentTickets[random.Next(currentTickets.Count)];
+                if(currentTickets.Count() != 0){
+              LotteryTicket raffleWinner = currentTickets[random.Next(currentTickets.Count)];
                 User user = users.FirstOrDefault(user => user.Id == raffleWinner.UserId);
-                winersTickets.Add(new RaffleResponse() { User = user, Gift = curretGift });
+                winersTickets.Add(new RaffleResponse() { User = user, Gift = curretGift });}
+                else
+                {
+                    winersTickets.Add(new RaffleResponse() { User = null, Gift = curretGift });
+                }
             });
             return winersTickets;
         }
