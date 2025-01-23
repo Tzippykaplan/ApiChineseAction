@@ -6,10 +6,14 @@ namespace Repository
     public class GiftsReposetory : IGiftsReposetory
     {
         static int Identity = 1;
-        public static List<Gift> gifts = [new Gift() { Id = Identity++, Name = "Tabel", Description = "big & nice", imgUrl = "tabel.png", donorId = 0 }
-        ,new Gift() { Id = Identity++, Name = "car", Description = "big & nice", imgUrl = "car.png", donorId = 0 },
-            new Gift() { Id = Identity++, Name = "bbb", Description = "big & nice", imgUrl = "car.png", donorId = 0 },
-            new Gift() { Id = Identity++, Name = "dd", Description = "big & nice", imgUrl = "car.png", donorId = 0 },
+        public static List<Gift> gifts = [new Gift() { Id = Identity++, Name = "Jeep trip", Description = "fun", imgUrl = "Halfofallincome.jpeg", donorId =1 }
+        ,new Gift() { Id = Identity++, Name = "car", Description = "big & nice", imgUrl = "Jeep.jpeg", donorId = 0 },
+            new Gift() { Id = Identity++, Name = "bbb", Description = "big & nice", imgUrl = "bike.jpeg", donorId = 0 },
+            new Gift() { Id = Identity++, Name = "dd", Description = "Flight for two to Austria", imgUrl = "2.jpeg", donorId = 0 },
+            new Gift() { Id = Identity++, Name = "bbb", Description = "big & nice", imgUrl = "bike.jpeg", donorId = 0 },
+            new Gift() { Id = Identity++, Name = "dd", Description = "Flight for two to Austria", imgUrl = "2.jpeg", donorId = 0 },
+            new Gift() { Id = Identity++, Name = "bbb", Description = "big & nice", imgUrl = "bike.jpeg", donorId = 0 },
+            new Gift() { Id = Identity++, Name = "dd", Description = "Flight for two to Austria", imgUrl = "2.jpeg", donorId = 0 },
         ];
         public async Task<List<Gift>> getGifts()
         {
