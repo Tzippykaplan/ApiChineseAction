@@ -9,8 +9,8 @@ namespace Entities
 {
     public class Donor :Person
     {
-       
 
+        public List<Gift>? MyGiftsList { get; set; }
 
     }
 }

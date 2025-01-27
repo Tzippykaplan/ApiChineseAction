@@ -3,6 +3,7 @@ using Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,8 +11,9 @@ namespace Reposetories
 {
     public class RaffleReposetory : IRaffleReposetory
     {
+        public static DateTime dateOfRaffle;
         static int Identity = 1;
-        static List<LotteryTicket> raffleTickets = [];
+        static public  List<LotteryTicket> raffleTickets = [];
         public async Task<List<LotteryTicket>> createTicket(List<LotteryTicket> lotteryTickets)
         {
             lotteryTickets.ForEach(lotteryTicket =>
@@ -47,6 +49,14 @@ namespace Reposetories
             });
             return winersTickets;
         }
-
+        public async Task<DateTime> getDateOfRaffle()
+        {
+            return  dateOfRaffle;
+        }
+        public async Task<DateTime> setDateOfRaffle(DateTime dataToSet)
+        {
+            dateOfRaffle = dataToSet;
+            return dataToSet;
+        }
     }
 }

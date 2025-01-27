@@ -24,8 +24,20 @@ namespace Services
             return await _raffleReposetory.GetRaffleResponse();
         }
        public async Task<LotteryTicket> getTicketById(int id)
+           
         {
+            
             return await _raffleReposetory.getTicketById(id);
+        }
+
+        public async Task<DateTime> getDateOfRaffle(){
+
+            return await _raffleReposetory.getDateOfRaffle();
+
+        }
+        public async Task<DateTime> setDateOfRaffle(DateTime dataToSet){ 
+
+            return await _raffleReposetory.setDateOfRaffle(dataToSet);
         }
     }
 }

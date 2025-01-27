@@ -1,4 +1,5 @@
 ﻿using Entities;
+using Reposetories;
 using System.ComponentModel;
 
 namespace Repository
@@ -52,12 +53,15 @@ namespace Repository
             return (gift);
 
         }
-        public async Task deleteGift(int id)
+        public async Task<bool> deleteGift(int id)
         {
+            if (RaffleReposetory.raffleTickets.FirstOrDefault<LotteryTicket>(currenTicket => currenTicket.GiftId == id) == null)
+            {
+                gifts.RemoveAll(currenGift => currenGift.Id == id);
+                return true;
 
-            gifts.RemoveAll(currenGift => currenGift.Id == id);
-
-
+            }
+            return false;
         }
         public async Task<Boolean> isUnique(Gift gift)
         {

@@ -16,11 +16,14 @@ namespace Reposetories
             new Donor() { Id = Identity++, FirstName = "mmm", LastName = "gg", Email = "gg@gmail.com" }];
         public async Task<List<Donor>> getDonors()
         {
+            List<Gift> gifts = GiftsReposetory.gifts;
+            donors.ForEach(curretDonor =>
+            {
+                curretDonor.MyGiftsList = gifts.FindAll(gift => gift.donorId == curretDonor.Id);
+            });
             return donors; ;
-
-
-
         }
+
         public async Task<Donor> getById(int id)
         {
 

@@ -36,10 +36,10 @@ namespace Services
             return await _giftsReposetory.updateGift(id, giftToUpdate);
 
         }
-        public async Task deleteGift(int id)
+        public async Task<bool> deleteGift(int id)
         {
 
-            _giftsReposetory.deleteGift(id);
+           return await  _giftsReposetory.deleteGift(id);
 
 
         }

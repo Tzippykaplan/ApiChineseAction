@@ -51,7 +51,31 @@ namespace ApiChineseAction.Controllers
                 return BadRequest();
             }
         }
+        [HttpGet("DateOfraffle")]
+        public async Task<ActionResult<DateTime>> DateOfraffle()
+        {
+            try
+            {
+                return await _raffleService.getDateOfRaffle();
+            }
+            catch (Exception e)
+            {
+                return BadRequest();
+            }
+        }
+        [HttpPost("DateOfraffle")]
+        public async Task<ActionResult<DateTime>> getDateOfraffle([FromBody] DateTime dateToSet)
+        {
+            try
+            {
+                return await _raffleService.setDateOfRaffle(dateToSet);
+            }
+            catch (Exception e)
+            {
+                return BadRequest();
+            }
+        }
 
-       
+
     }
 }
