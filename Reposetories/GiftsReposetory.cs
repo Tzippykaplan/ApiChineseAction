@@ -7,14 +7,22 @@ namespace Repository
     public class GiftsReposetory : IGiftsReposetory
     {
         static int Identity = 1;
-        public static List<Gift> gifts = [new Gift() { Id = Identity++, Name = "Jeep trip", Description = "fun", imgUrl = "Halfofallincome.jpeg", donorId =1 }
-        ,new Gift() { Id = Identity++, Name = "car", Description = "big & nice", imgUrl = "Jeep.jpeg", donorId = 0 },
-            new Gift() { Id = Identity++, Name = "bbb", Description = "big & nice", imgUrl = "bike.jpeg", donorId = 0 },
-            new Gift() { Id = Identity++, Name = "dd", Description = "Flight for two to Austria", imgUrl = "2.jpeg", donorId = 0 },
-            new Gift() { Id = Identity++, Name = "bbb", Description = "big & nice", imgUrl = "bike.jpeg", donorId = 0 },
-            new Gift() { Id = Identity++, Name = "dd", Description = "Flight for two to Austria", imgUrl = "2.jpeg", donorId = 0 },
-            new Gift() { Id = Identity++, Name = "bbb", Description = "big & nice", imgUrl = "bike.jpeg", donorId = 0 },
-            new Gift() { Id = Identity++, Name = "dd", Description = "Flight for two to Austria", imgUrl = "2.jpeg", donorId = 0 },
+        public static List<Gift> gifts = [
+             new Gift() { Id = Identity++, Name = "Half of the Donation", Description = "Receive half of the total money donated", imgUrl = "halfDonation.jpeg", donorId = 1 },
+    new Gift() { Id = Identity++, Name = "Luxury Car", Description = "A brand new luxury car", imgUrl = "car.jpeg", donorId = 1 },
+    new Gift() { Id = Identity++, Name = "Mountain Bike", Description = "High-quality mountain bike", imgUrl = "bike.jpeg", donorId = 1 },
+    new Gift() { Id = Identity++, Name = "Romantic Flight", Description = "Flight for two to Austria", imgUrl = "flightToAustria.jpeg", donorId = 1 },
+    new Gift() { Id = Identity++, Name = "Yearly Cleaning Service", Description = "Professional home cleaning service for a year", imgUrl = "cleaningService.jpeg", donorId = 1 },
+    new Gift() { Id = Identity++, Name = "Coffee Machine", Description = "State-of-the-art coffee machine", imgUrl = "CoffeeMachine.jpeg", donorId = 1 },
+    new Gift() { Id = Identity++, Name = "Designer Couch", Description = "Modern designer couch", imgUrl = "DesignerCouch.jpeg", donorId = 1 },
+    new Gift() { Id = Identity++, Name = "Professional Camera", Description = "High-resolution professional camera", imgUrl = "Camera.jpeg", donorId = 1 },
+    new Gift() { Id = Identity++, Name = "Smart Watch", Description = "Advanced smart watch with health tracking", imgUrl = "SmartWatch.jpeg", donorId = 1 },
+    new Gift() { Id = Identity++, Name = "Washing Machine", Description = "Energy-efficient washing machine", imgUrl = "WashingMachine.jpeg", donorId = 1 },
+    new Gift() { Id = Identity++, Name = "Luxury Sofa Set", Description = "Premium sofa set for your living room", imgUrl = "SofaSet.jpeg", donorId = 1 },
+    new Gift() { Id = Identity++, Name = "Gaming Console", Description = "Latest generation gaming console", imgUrl = "GamingConsole.jpeg", donorId = 1 },
+    new Gift() { Id = Identity++, Name = "Home Theater System", Description = "High-quality surround sound system", imgUrl = "HomeTheater.jpeg", donorId = 1 },
+    new Gift() { Id = Identity++, Name = "Electric Scooter", Description = "Eco-friendly electric scooter", imgUrl = "ElectricScooter.jpeg", donorId = 1 },
+    new Gift() { Id = Identity++, Name = "Designer Watch", Description = "Luxury designer watch", imgUrl = "DesignerWatch.jpeg", donorId = 1 }
         ];
         public async Task<List<Gift>> getGifts()
         {
